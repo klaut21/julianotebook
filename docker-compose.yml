@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  web:
+    build: .
+    volumes:
+      - ${LOCAL_WORKING_DIR}:/home/jovyan/work
+      - ${LOCAL_SSL_CERTS}:/etc/ssl/notebook
+    ports:
+      - ${PORT}:8888
+    command: "start-notebook.sh \
+      --NotebookApp.password=${ACCESS_TOKEN} \
+      --NotebookApp.certfile=/etc/ssl/notebook/jupyter.pem"
