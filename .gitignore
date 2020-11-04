@@ -23,6 +23,8 @@ docs/site/
 # environment.
 Manifest.toml
 
-# Exclude SSL and access tokens
+# # dotenv environment variables file
 .env
-ssl-certs/*.pem
+
+# SSL files
+*.pem
